@@ -13,10 +13,10 @@
 
 //= require rails-ujs
 //= require turbolinks
-//= require plugins/jquery/jquery-3.1.0.min
-//= require plugins/bootstrap/js/bootstrap.min
-//= require jquery3
+//= require jquery
+//= require bootstrap/dist/js/bootstrap.min
 //= require plugins/lightbox/lightbox
 //= require plugins/owl-carousel/js/owl.carousel.min
+//= require plugins/sticky/jquery.sticky.js
 //= require js/theme
 //= require_tree .
