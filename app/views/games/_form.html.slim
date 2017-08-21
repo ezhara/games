@@ -1,0 +1,9 @@
+= simple_form_for(@game) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.input :short_description
+    = f.file_field :image, as: :file
+  .form-actions
+    = f.button :submit

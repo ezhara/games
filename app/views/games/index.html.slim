@@ -1,0 +1,113 @@
+h1 Listing games
+
+= link_to 'New Game', new_game_path
+
+
+section.hero.hero-game style=("background-image: url('img/hero/hero.jpg');") 
+  .overlay
+  .container
+    .hero-block
+      .hero-left
+        h2.hero-title The Witcher 3: Wild Hunt
+        p The world is in chaos. The air is thick with tension and the smoke of burnt villages.
+        a.btn.btn-primary.btn-lg.btn-shadow.btn-rounded.btn-effect href="game-post.html" role="button"  Read More
+        a.btn.btn-outline-default.btn-lg.btn-rounded.m-l-10 href="#" role="button" 
+          | Follow Now
+          i.fa.fa-heart-o
+      .hero-right
+        .hero-review
+          span Gameforest
+          a.chart.easypiechart data-percent="89" data-scale-color="#e3e3e3" href="review-post.html" 
+            span> 89
+            | \%
+        .hero-review
+          span MetaCritic
+          a href="review-post.html"  93
+        .hero-review
+          span Users
+          a href="review-post.html"  9.1
+section.p-t-30
+  .container
+    .toolbar-custom
+      form.float-left.cold-12.col-sm-6.p-l-0.p-r-10 method="post" 
+        .form-group.input-icon-right
+          i.fa.fa-search
+          input.form-control.search-game placeholder=("Search Game...") type="text" /
+      .dropdown.float-left
+        button.btn.btn-default aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" type="button" 
+          | All Platform
+          i.fa.fa-caret-down
+        ul.dropdown-menu
+          li.active
+            a href="#"  All Platform
+          li
+            a href="#"  Playstation 4
+          li
+            a href="#"  Xbox One
+          li
+            a href="#"  Origin
+          li
+            a href="#"  Steam
+      .btn-group.float-right.m-l-5.hidden-sm-down role="group" 
+        a.btn.btn-default.btn-icon href="#" role="button" 
+          i.fa.fa-th-large
+        a.btn.btn-default.btn-icon href="#" role="button" 
+          i.fa.fa-bars
+      .dropdown.float-right
+        button.btn.btn-default aria-expanded="true" aria-haspopup="true" data-toggle="dropdown" type="button" 
+          | Date Added
+          i.fa.fa-caret-down
+        ul.dropdown-menu.dropdown-menu-right
+          li.active
+            a href="#"  Date Added
+          li
+            a href="#"  Popular
+          li
+            a href="#"  Newest
+          li
+            a href="#"  Oldest
+    .row
+    - @games.each do |game|
+      .col-12.col-sm-6.col-md-4
+        .card.card-lg
+          .card-img
+            a href=game
+              img.card-img-top src="#{game.image_url}"
+            .badge.badge-pc pc
+            .card-likes
+              a href="#"  15
+          .card-block
+            h4.card-title
+              = link_to game.title, game
+            .card-meta
+              span June 13, 2017
+            p.card-text =game.short_description.html_safe
+            hr
+            = link_to 'Edit', edit_game_path(game)
+            = link_to 'Destroy', game, data: { confirm: 'Are you sure?' }, method: :delete
+    .pagination-results.m-t-0
+      span Showing 10 to 20 of 48 videos
+      nav aria-label=("Page navigation") 
+        ul.pagination
+          li.disabled
+            a aria-label="Previous" href="#" 
+              span aria-hidden="true" 
+                i.fa.fa-angle-left
+          li.active
+            a href="#"  1
+          li
+            a href="#"  2
+          li
+            a href="#"  3
+          li
+            a href="#"  4
+          li
+            a href="#"  5
+          li.separate
+            span ...
+          li
+            a href="#"  25
+          li
+            a aria-label="Next" href="#" 
+              span aria-hidden="true" 
+                i.fa.fa-angle-right
