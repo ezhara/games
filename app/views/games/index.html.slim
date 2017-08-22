@@ -72,7 +72,7 @@ section.p-t-30
         .card.card-lg
           .card-img
             a href=game
-              img.card-img-top src="#{game.image_url}"
+              img.card-img-top src="#{game.image_url(:thumb)}"
             .badge.badge-pc pc
             .card-likes
               a href="#"  15
@@ -81,7 +81,7 @@ section.p-t-30
               = link_to game.title, game
             .card-meta
               span June 13, 2017
-            p.card-text =game.short_description.html_safe
+            p.card-text =game.short_description
             hr
             = link_to 'Edit', edit_game_path(game)
             = link_to 'Destroy', game, data: { confirm: 'Are you sure?' }, method: :delete
