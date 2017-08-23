@@ -1,13 +1,14 @@
-p#notice = notice
-= image_tag(@game.image_url)
-p
-  strong Title:
-  = @game.title
-p
-  strong Short description:
-  = @game.short_description
-  
-= link_to 'Edit', edit_game_path(@game)
-'  |
-= link_to 'Back', games_path
-= link_to 'Destroy', @game, data: { confirm: 'Are you sure?' }, method: :delete
+.container
+	p#notice = notice
+	= image_tag(@game.image_url)
+	p
+	  strong Title:
+	  = @game.title
+	p
+	  strong Short description:
+	  = @game.short_description
+	  
+	= link_to 'Edit', edit_game_path(@game)
+	'  |
+	= link_to 'Back', games_path
+	= link_to 'Destroy', @game, data: { confirm: 'Are you sure?' }, method: :delete

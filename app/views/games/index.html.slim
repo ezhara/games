@@ -1,6 +1,6 @@
-h1 Listing games
 
-= link_to 'New Game', new_game_path
+
+
 
 
 section.hero.hero-game style=("background-image: url('img/hero/hero.jpg');") 
@@ -28,6 +28,10 @@ section.hero.hero-game style=("background-image: url('img/hero/hero.jpg');")
           a href="review-post.html"  9.1
 section.p-t-30
   .container
+    h1 Список игр
+    hr
+    = link_to 'Создать игру', new_game_path, class: 'btn btn-default'
+    hr
     .toolbar-custom
       form.float-left.cold-12.col-sm-6.p-l-0.p-r-10 method="post" 
         .form-group.input-icon-right
@@ -67,24 +71,23 @@ section.p-t-30
           li
             a href="#"  Oldest
     .row
-    - @games.each do |game|
-      .col-12.col-sm-6.col-md-4
-        .card.card-lg
-          .card-img
-            a href=game
-              img.card-img-top src="#{game.image_url(:thumb)}"
-            .badge.badge-pc pc
-            .card-likes
-              a href="#"  15
-          .card-block
-            h4.card-title
-              = link_to game.title, game
-            .card-meta
-              span June 13, 2017
-            p.card-text =game.short_description
-            hr
-            = link_to 'Edit', edit_game_path(game)
-            = link_to 'Destroy', game, data: { confirm: 'Are you sure?' }, method: :delete
+      - @games.each do |game|
+        .col-12.col-sm-6.col-md-4
+          .card.card-lg
+            .card-img
+              a href=game
+                img.card-img-top src="#{game.image_url(:thumb)}"
+              .badge.badge-pc pc
+              .card-likes
+                a href="#"  15
+            .card-block
+              h4.card-title
+                = link_to game.title, game
+              .card-meta
+                span June 13, 2017
+              p.card-text =game.short_description
+          = link_to 'Изменить', edit_game_path(game)
+          = link_to 'Удалить', game, data: { confirm: 'Are you sure?' }, method: :delete
     .pagination-results.m-t-0
       span Showing 10 to 20 of 48 videos
       nav aria-label=("Page navigation") 
