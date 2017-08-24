@@ -24,6 +24,8 @@ gem 'mini_magick'
 
 gem 'devise'
 gem 'cancancan'
+gem 'rolify'
+gem 'administrate'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
