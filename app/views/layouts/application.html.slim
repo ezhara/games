@@ -4,9 +4,9 @@ html
     meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
     title Games
     = csrf_meta_tags
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
-  body.fixed-header
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+  body
     = render 'layouts/components/header'
     = yield
     = render 'layouts/components/footer'
