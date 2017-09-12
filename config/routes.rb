@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   devise_for :users
-  
-  resources :categories do
-    resources :games
+
+  resources :games
+  resources :categories    
 
   namespace :admin do
     resources :users

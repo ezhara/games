@@ -1,6 +1,10 @@
 class Category < ApplicationRecord
-  belongs_to :parent, class_name: "Category"
-  has_many :children, class_name: "Category", foreign_key: "parent_id"
+  validates_presence_of :name, :description
+
+  belongs_to :parent, class_name: 'Category', foreign_key: :parent_id, optional: true
+  has_many :children, class_name: 'Category', foreign_key: :parent_id, dependent: :destroy
+
+  scope :parent_categories, -> { where(parent_id: nil) }
 
   def parent_name
   # it may not have a parent
