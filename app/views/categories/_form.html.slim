@@ -5,6 +5,6 @@
     = f.input :name
     = f.input :description
     = f.association :parent, label_method: :name, value_method: :id
-
+    = f.association :games, label_method: :title, value_method: :id, include_blank: false, as: :check_boxes
   .form-actions
     = f.button :submit

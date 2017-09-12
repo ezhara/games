@@ -6,6 +6,7 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
+    @games = Game.all
   end
 
   # GET /categories/1
@@ -70,6 +71,6 @@ class CategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def category_params
-      params.require(:category).permit(:name, :description, :parent_id)
+      params.require(:category).permit(:name, :description, :parent_id, :game_ids => [])
     end
 end
