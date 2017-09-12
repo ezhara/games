@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+  root 'welcome#index'
+
+  devise_for :users
+  
+  resources :categories do
+    resources :games
+
   namespace :admin do
     resources :users
     resources :games
@@ -7,9 +15,5 @@ Rails.application.routes.draw do
     root to: "users#index"
   end
 
-  devise_for :users
-  resources :games
-  get 'welcome/index'
 
-  root 'welcome#index'
 end
