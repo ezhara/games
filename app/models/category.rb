@@ -7,6 +7,10 @@ class Category < ApplicationRecord
 
   has_and_belongs_to_many :games
 
+  def self_and_children_ids
+    children.ids.push(id)
+  end
+
   def parent_name
   # it may not have a parent
     parent.try(:name)
