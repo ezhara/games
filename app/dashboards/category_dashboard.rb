@@ -51,7 +51,6 @@ class CategoryDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :name,
     :parent,
-    :children,
     :games,
     :description,
   ].freeze

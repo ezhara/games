@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @games = Game.by_category(@category)
+    @games = Game.by_category(@category).uniq
   end
 
   # GET /categories/new
